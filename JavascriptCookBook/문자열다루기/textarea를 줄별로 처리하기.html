@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+
+		function result(){
+			//텍스트박스의 줄바꿈
+			var txtbox = document.getElementById("inputbox");
+			var lines = txtbox.value.split("\n");
+
+			//내용을 html 버전으로 변경
+			var resultString = "<p>";
+			for (var i = 0; i < lines.length; i++) {
+				resultString += lines[i] + "<br/>"; // += 통해서 값을 계속 넣어줌
+			}
+			resultString += "</p>";
+
+			//마지막 줄을 페이지에 출력
+			var blk = document.getElementById("result");
+			blk.innerHTML = lines[lines.length-1];
+
+			var blkHtml = document.getElementById("resultHtml");
+			blkHtml.innerHTML = resultString;
+
+		}
+		
+	
+	</script>
+</head>
+<body>
+	<textarea id="inputbox"></textarea>
+	<div id="result"></div>
+	<div id="resultHtml"></div>
+	<input type="button" value="버튼" onclick="result()">
+
+	<h1>textarea의 콘텐츠를 줄별로 처리하고 싶습니다.</h1>
+
+	<p> string 객체의 <strong>split</strong> 메서드를 줄 바꿈 <strong>이스케이프 </strong> 문자열(\n)과 함꼐 사용하면 textarea의 콘텐츠를 줄별로 분리할 수 있습니다. </p>
+</body>
+</html>

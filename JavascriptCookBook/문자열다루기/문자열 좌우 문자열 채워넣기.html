@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+
+			var lineLength = 20;
+			var oldStr = "This is a string";
+
+			var diff = lineLength - oldStr.length;
+			var filler = '&nbsp;.';
+
+			for(var i = 0; i < diff; i++){
+				oldStr = oldStr + filler;
+			}
+
+			//페이지에 출력
+			document.getElementById("result").innerHTML = oldStr; 
+
+		}
+	</script>
+</head>
+<body>
+	<div id="result"></div>
+
+	<h1>문자열 왼쪽 도는 오른쪽에 주어진 문자를 채워 넣어야 합니다.</h1>
+
+	<p> 문자열의 길이를 확인한 후, 주어진 문자열을 필요한 만큼 반복하여 원래 문자열에 덧붙이거나 원래 문자열 제일 앞에 추가하여 새로운 문자열을 만들면 됩니다.</p>
+
+</body>
+</html>
