@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS 기본</h1>
+
+	<p>*현재 소스는 하나의 ng-app만 실행시 제대로 표현 된다.</p>
+
+	<h2>AngularJS 예제</h2>
+	<div ng-app="">
+	 	<p>Name: <input type="text" ng-model="name"></p>
+	 	<p ng-bind="name"></p>
+	</div>
+	<p>ng-app으로 선언하여야만 AngularJS를 사용할 수 있다.</p>
+	<p>ng는 data-ng로도 사용 가능 하다.</p>
+
+	<h2>AngularJS 표현식</h2>
+	<div ng-app="">
+		<p>my first expression : {{ 5 + 5 }}</p>
+	</div>
+	<p>표현식은 {{}} 로 사용가능하며 ng-bind로도 사용 가능 하다.</p>
+	<div ng-app="">
+		<p>my first expression : <span ng-bind="5 + 5"></span></p>
+	</div>
+
+	<h2>AngularJS 콘트롤러</h2>
+	<div ng-app="" ng-cotroller="personController">
+		First Name : <input type="text" ng-model="firstName">
+		Last Name : <input type="text" ng-model="lastName">
+		<br>
+		Full Name : {{ firstName + " " + lastName }}
+	</div>
+
+	<script>
+		function personController($scope){
+			$scope.firstName = "John";
+			$scope.lastName = "Doe";
+		}
+	</script>
+</body>
+</html>

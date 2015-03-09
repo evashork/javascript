@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS 지시자</h1>
+
+	<h2>ng-app</h2>
+	<p>ng-app AngularJS 사용을 시작한다는 의미이다. ng-app에 값을 지정 할 수 있다.</p>
+
+	<h2>ng-init</h2>
+	<p>ng-init는 데이타를 초기화 할 때 사용한다.</p>
+
+	<h2>ng-model</h2>
+	<div ng-app="" ng-init="quantity=1;price=5">
+		Quantity: <input type="number"	ng-model="quantity">
+		Costs:    <input type="number" ng-model="price">
+
+		Total in dollar: {{ quantity * price }}
+	</div>
+	<p>ng-model은 input,select,textarea의 value 값을 실시간으로 반영 한다.</p>
+
+	<h2>ng-repeat</h2>
+	<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+	  <ul>
+	    <li ng-repeat="x in names">
+	      {{ x }}
+	    </li>
+	  </ul>
+	</div>
+	<p>ng-repeat는 html 요소를 반복한다.</p>
+
+	<div ng-app="" ng-init="names=[
+		{name:'Jani',country:'Norway'},
+		{name:'Hege',country:'Sweden'},
+		{name:'Kai',country:'Denmark'}]">
+
+		<ul>
+		  <li ng-repeat="x	in names">
+		    {{ x.name + ', ' + x.country }}
+		  </li>
+		</ul>
+	</div>
+	<p>배열도 간단하게 반복 출력할 수 있다. AngularsJS는 데이타베이스CRUD에 최적화 되어 있다. </p>
+</body>
+</html>
