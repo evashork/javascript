@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS SQL</h1>
+
+	<h2>PHP와 연결하기</h2>
+	<div ng-app="" ng-controller="customersController"> 
+		<table>
+		  <tr ng-repeat="x in names">
+		    <td>{{ x.Name }}</td>
+		    <td>{{ x.Country }}</td>
+		  </tr>
+		</table>
+	</div>
+
+	<script>
+		function customersController($scope,$http) {
+		    $http.get("http://www.w3schools.com/website/customers_mysql.php")
+		    .success(function(response) {$scope.names = response;});
+		}
+	</script>
+
+	<p>php와 asp가 만들어준 JSON 데이터를 받아서 뿌려준다.</p>
+
+</body>
+</html>

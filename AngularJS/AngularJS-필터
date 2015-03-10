@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS 필터</h1>
+
+	<h2>필터의 종류</h2>
+	<ul>
+		<li>currency - 화폐단위 변환</li>
+		<li>filter - 검색</li>
+		<li>lowercase - 소문자 변환</li>
+		<li>orderBy - 정렬</li>
+		<li>uppercase - 대문자 변환</li>
+	</ul>
+
+
+
+	<h2>표현식에 필터 추가하기</h2>
+	<div ng-app="" ng-controller="personController">
+		<p>The name is {{ lastName | uppercase }}</p>
+	</div>
+	<script>
+		function personController($scope) {
+		    $scope.firstName="John",
+		    $scope.lastName="Doe"
+		}
+	</script>
+
+	<p>표현식에 필터를 추가하여 데이터를 보여줄 수 있다.</p>
+
+
+
+	<h2>currency - 화폐단위 변환</h2>
+	<div ng-app="" ng-controller="costController">
+		<input type="number" ng-model="quantity">
+		<input type="number" ng-model="price">
+
+		<p>Total = {{ (quantity * price) | currency }}</p>
+	</div>
+
+	<p>해당국가의 단위로 변환된다. 지역통화로 변경하려면 | currency : "원" 이런 식으로 추가하면 된다.</p>
+
+	
+
+	<h2>orderBy - 정렬</h2>
+	<div ng-app="" ng-controller="namesController">
+		<p>Looping with objects:</p>
+		<ul>
+		  <li ng-repeat="x in names | orderBy:'country'">
+		    {{ x.name + ', ' + x.country }}
+		  </li>
+		</ul>
+	</div>
+	<script>
+		function namesController($scope) {
+	    	$scope.names = [
+	        {name:'Jani',country:'Norway'},
+	        {name:'Hege',country:'Sweden'},
+	        {name:'Kai',country:'Denmark'}
+	    ];
+	</script>
+
+	<p>속성을 선택하여 정렬 효과를 줄 수 있다.</p>
+
+
+	<h2>filter - 검색</h2>
+	<div ng-app="" ng-controller="namesController">
+		<p><input type="text" ng-model="test"></p>
+		<ul>
+		  <li ng-repeat="x in names | filter:test | orderBy:'country'">
+		    {{ (x.name | uppercase) + ', ' + x.country }}
+		  </li>
+		</ul>
+	</div>
+	<p>검색 영역을 설정하여 검색 할 수 있다.</p>
+
+	

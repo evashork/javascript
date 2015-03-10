@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS HTML DOM</h1>
+	
+	<h2>ng-disabled 지시자</h2>
+	<div ng-app="">
+		<p><button ng-disabled="mySwitch">Click Me!</button></p>
+		<p><input type="checkbox" ng-model="mySwitch">Button</p>
+	</div>
+	<p>HTML 속성인 disabled를 이용할 수 있다. true일때 비활성화 false일때 활성화된다.</p>
+
+	<h2>ng-show 지시자</h2>
+	<div ng-app="" ng-init="hour=13">
+		<p ng-show="true">I am visible.</p>
+		<p ng-show="false">I am not visible.</p>
+		<p ng-show="hour > 12">I am visible.</p>
+	</div>
+	<p>조건이 참일때 보여준다.</p>
+
+	<h2>ng-hide 지시자</h2>
+	<div ng-app="">
+		<p ng-hide="true">I am not visible.</p>
+		<p ng-hide="false">I am visible.</p>
+	</div> 
+</body>
+</html>

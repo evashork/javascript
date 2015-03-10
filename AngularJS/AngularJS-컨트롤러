@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+	<h1>AngularJS 컨트롤러</h1>
+
+	<h2>ng-controller</h2>
+	<div ng-app="" ng-controller="personController">
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+	</div>
+	<script>
+		function personController($scope) {
+		    $scope.firstName="John",
+		    $scope.lastName="Doe"
+		}
+	</script>
+	<p>ng-controller는 자바스크립트와 AngularJS를 연결시켜준다. 데이터를 관리하는 데 이용 된다.</p>
+	<p>$scope는 AngularJS의 지정된 객체이다.</p>
+
+
+	<h2>controller Methods</h2>
+	<div ng-app="" ng-controller="personController">
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{fullName()}}
+	</div>
+	<script>
+		function personController($scope) {
+		    $scope.firstName = "John",
+		    $scope.lastName = "Doe",
+		    $scope.fullName = function() {
+		        return $scope.firstName + " " + $scope.lastName;
+		    }
+		}
+	</script>
+	<script src="namesController.js"></script> 
+	<p>controller는 메소드 사용이 가능하다. 외부파일로 링크 역시 가능하다.</p>
+</body>
+</html>
