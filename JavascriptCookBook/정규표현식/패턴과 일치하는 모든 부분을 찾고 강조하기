@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			var searchString = "Now is the time and this is the time and that is the time";
+			var pattern = /t\w*e/g;
+			var matchArray;
+
+			var str = "";
+
+			while((matchArray = pattern.exec(searchString)) != null){
+				str += " at " + matchArray.index + " we found " + matchArray[0] + "</br>";
+			}
+
+			document.getElementById("result").innerHTML = str;
+		}
+	</script>
+</head>
+<body>
+	<h1>패턴과 일치하는 모든 부분을 찾고 강조하기</h1>
+	<p>RegExp.exec 메서드를 전역플래그 g 와 함께 사용하면 패턴에 일치하는 모든 부분을 찾을 수 있다.</p>
+	<div id="result"></div>
+</body>
+</html>

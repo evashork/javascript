@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			var pieceOfHtml = "<p>This is a <span>paragraph</span></p>";
+			pieceOfHtml = pieceOfHtml.replace(/</g, "&lt;");
+			pieceOfHtml = pieceOfHtml.replace(/>/g, "&gt;");
+
+			document.getElementById("result").innerHTML = pieceOfHtml;
+
+		}
+	</script>
+</head>
+<body>
+	<h1>HTML태그를 명명된 엔티티로 치환하기</h1>
+	<p>정규표현식을 사용하여 꺽은 갈호를 명명된 엔티티 &lt; &gt;로 바꾸면 됩니다.</p>
+	<div id="result"></div>
+</body>
+</html>

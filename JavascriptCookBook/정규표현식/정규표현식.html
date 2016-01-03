@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+	<h1>정규표현식</h1>
+	<pre>
+	var re = /정규표현식/;
+	var re = /Shelly\s + Powers/;  하나 이상의 공백으로 구분된 Shelly라는 단어와 Powers라는 단어를 찾는다.
+
+	Shelly Powers  - 일치
+	Shelly     Powers - 일치
+	</pre>
+	<p> <strong>\s</strong> 는 하나의 공백 문자를 의미한다.</p>
+	
+	<h2>자주 사용되는 표현식</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>문자</th>
+				<th>일치</th>
+				<th>예제</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>^</td>
+				<td>입력값의 시작</td>
+				<td>/^This/는 This is.... 와 일치</td>
+			</tr>
+			<tr>
+				<td>$</td>
+				<td>입력값의 끝</td>
+				<td>/end?/는 Thi is the end 와 일치</td>
+			</tr>
+			<tr>
+				<td>*</td>
+				<td>0번 이상의 반복</td>
+				<td>/se*/는 seeeee 와 se에 일치</td>
+			</tr>
+			<tr>
+				<td>?</td>
+				<td>0번 혹은 1번 반복</td>
+				<td>/ap?/는 apple과 and에 일치</td>
+			</tr>
+			<tr>
+				<td>+</td>
+				<td>1번 이상 반복</td>
+				<td>/ap+/는 apple에는 일치 apie에는 불일치</td>
+			</tr>
+			<tr>
+				<td>{n}</td>
+				<td>정확히 n번 반복</td>
+				<td>/ap{2}는 apple에는 일치 apie에는 불일치</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

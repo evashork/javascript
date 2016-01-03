@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			var searchString = "Now is the time and this is the time and that is the time";
+			var re = /t\w{2}e/g;
+			var repalcement = searchString.replace(re,"place");
+			 
+			document.getElementById("result").innerHTML = repalcement;
+
+		}
+	</script>
+</head>
+<body>
+	<h1>패턴을 새로운 문자열로 치환하기</h1>
+	<p>String 객체의 replace 메서드를 정규표현식과 함께 사용하면 됩니다.</p>
+	<P>Now is the time and this is the time and that is the time</P>
+	<div id="result"></div>
+</body>
+</html>
