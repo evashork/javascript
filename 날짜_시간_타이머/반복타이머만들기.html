@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+		#redbox{width: 10px; height: 10px; background-color: red; position: relative;}
+	</style>
+	<script type="text/javascript">
+		var x = 0;
+		window.onload = startPlay;
+
+		var startPlay = setInterval(moveElement,1000);
+
+		function moveElement(){
+			x += 10;
+			var left = x + "px";
+			document.getElementById("redbox").style.left=left;
+		}
+
+		function stopPlay(){
+			clearInterval(startPlay);
+		}
+	</script>
+</head>
+<body>
+	<div id="redbox"></div>
+	<button onclick="stopPlay()">멈추기</button>
+
+	<h1>똑같은 함수를 일정한 간격을 두고 반복해서 실행해야 합니다.</h1>
+	<p>window.setInterval 메서드를 사용해서 반복 타이머를 생성 하면 됩니다.</p>
+	<p>SVG나 Canvas 등을 사용해서 웹 페이지에서 동적인 애니메이션을 구현하려면 setTimeout과 setInterval 메서드가 필요 합니다. 특히 반짝이거나 움직이는 동작은 특정 간격을 두고 <br>
+	어떤 메서드를 호출하는 타미어가 필요합니다.</p>	
+</body>
+</html>

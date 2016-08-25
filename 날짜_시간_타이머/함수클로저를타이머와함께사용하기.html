@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+		#redbox{width: 10px; height: 10px; background-color: red; position: relative;}
+	</style>
+	<script type="text/javascript">
+		var intervalId = null;
+
+		function stopPlay(){
+			var btn = document.getElementById("btn");
+
+			if(intervalId == null){
+				btn.innerHTML = "멈추기";
+				startStopElement();
+			}else{
+				btn.innerHTML = "시작하기";
+				startStopElement();
+			}
+		}
+
+		function startStopElement(){
+			if(intervalId == null){
+				var x = 0;
+				intervalId = setInterval(function() {
+					x+=5;
+					var left = x + "px";
+					document.getElementById("redbox").style.left=left;
+				},100)
+			} else {
+				clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+
+
+		
+	</script>
+</head>
+<body>
+	<div id="redbox"></div>
+	<button id="btn" onclick="stopPlay()">시작하기</button>
+
+	<h1>타이머가 붙은 함수를 제공하되, 타이머 메서드를 호출할 때 함수를 바로 추가하고 싶습니다.</h1>
+	<p>setInterval이나 setTimeout 메서드 호출시 익명 함수를 첫 번째 인수로 사용하면 됩니다.</p>
+</body>
+</html>

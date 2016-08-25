@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		h1{font-size: 22px;}
+		strong{color: red}
+	</style>
+	<script type="text/javascript">
+		var firstDate;
+		window.onload = startTimer;
+
+		function startTimer(){
+			firstDate = new Date();
+			document.getElementById("date").onclick = doEvent;
+		}
+
+		function doEvent(){
+			var secondDate = new Date();
+			alert((secondDate - firstDate) / 1000);
+		}
+	</script>
+</head>
+<body>
+	<button id="date">경과시간</button>
+	<h1>두 이벤트 사이에 경과한 시간을 구하고 싶습니다.</h1>
+
+	<p>첫번째 이벤트가 발생했을 때 Date 객체를 만들고 두 번째 이벤트가 발생했을 때 또 다른 Date 객체를 만들어서 <br> 두 번째에서 첫 번째를 빼면 됩니다. 뺀 값은 밀리초 단위이므로 초 단위 값을 바꾸려면 1,000으로 나누면 됩니다.</p>
+</body>
+</html>
